@@ -21,12 +21,12 @@ requirements.txt
 README.md
 
 Dependencies:
-Python 3.9 or newer
-opencv-python
-numpy
-matplotlib
+Python 3.9 or newer,
+opencv-python,
+numpy,
+matplotlib.
 
-he provided road image and output a binary bitmap where the region between the lane boundaries is black and everything else is white.
+h
 
 Preprocessing: resize to 800x800, Gaussian blur (5x5) to reduce noise, convert to grayscale.
 Colour filtering (HSV): the road is grey, so it has low saturation; the lane line is white, so it has high brightness and low saturation. Two cv2.inRange masks pick these out.
