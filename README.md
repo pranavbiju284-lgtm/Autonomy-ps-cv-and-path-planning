@@ -12,10 +12,10 @@ Part A research PDFs are in docs/.
 
 Repository structure
 ps1_computer_vision/
-    lane_detection.py      # lane isolation pipeline
+    lane_isolation.py      # lane isolation pipeline
     road.jpg               # provided test image
 ps2_path_planning/
-    planner.py             # Dijkstra on a 2D grid + visualization
+    dijkstra_planner.py             # Dijkstra on a 2D grid + visualization
 docs/                      # Part A PDFs, result screenshots and plots
 requirements.txt
 README.md
