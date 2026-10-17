@@ -24,21 +24,7 @@ opencv-python
 numpy
 matplotlib
 
-(heapq is part of the Python standard library.)
-
-Setup
-bash
-git clone https://github.com/pranavbiju284-lgtm/Autonomy-ps-cv-and-path-planning.git
-cd Autonomy-ps-cv-and-path-planning
-python -m venv venv
-venv\Scripts\activate          # Windows
-# source venv/bin/activate     # Linux / macOS
-pip install -r requirements.txt
-PS 1 – Lane Marking and Background Isolation
-
-Goal: take the provided road image and output a binary bitmap where the region between the lane boundaries is black and everything else is white.
-
-Approach (pipeline):
+he provided road image and output a binary bitmap where the region between the lane boundaries is black and everything else is white.
 
 Preprocessing: resize to 800x800, Gaussian blur (5x5) to reduce noise, convert to grayscale.
 Colour filtering (HSV): the road is grey, so it has low saturation; the lane line is white, so it has high brightness and low saturation. Two cv2.inRange masks pick these out.
@@ -48,19 +34,6 @@ Lane region: road and line masks are combined, cleaned with morphological openin
 Smoothing: the filled region is blurred and re-thresholded to smooth the jagged boundary.
 Final bitmap: the region is black (0) and the background is white (255). The white lane line pixels are excluded from the region so the line stays white.
 
-How to run:
-
-bash
-cd ps1_computer_vision
-python lane_detection.py
-
-Input: road.jpg (the provided image). Output: lane_bitmap.png (final black/white bitmap) and pipeline_steps.png (grid of all intermediate images: original, grayscale, road threshold, white line, edges, lane region, boundary overlay, final bitmap).
-
-Results:
-
-Show Image Show Image
-
-What worked / what failed: Fill in your own notes here, for example which thresholds you had to change, what the first rough result looked like, and what you tried that did not work.
 
 Limitations:
 
@@ -95,11 +68,6 @@ Goal	gold star
 Explored cells	light-blue squares
 Final path	red line
 
-Results:
-
-Show Image
-
-Observations: Fill in your own, e.g. explored cell count vs path length, and how the search spreads outward from the start.
 
 Limitations:
 
@@ -110,14 +78,11 @@ Use of AI and external resources
 
 I used the following as learning aids, in line with the induction guidelines:
 
-Claude (Anthropic AI assistant): used to explain concepts (image processing, HSV, Canny, Hough, BFS/Dijkstra/A*), to help set up this GitHub repository and README, and to give feedback and suggestions on my code. I wrote the pipeline and planner code myself and made changes after review.
-YouTube tutorials: video tutorials on OpenCV lane detection and on pathfinding algorithms, used to understand the ideas before implementing them.
-Documentation: OpenCV Python tutorials (docs.opencv.org) and Red Blob Games, "Introduction to the A* Algorithm" (redblobgames.com).
+Claude for research ,learning, help and debugging the code.
 
-Add the exact YouTube video titles / channel names and links you used in the references list below.
+Youtube channels like veritasium helped a lot in its gmaps video, also many other videos .
 
 References
 OpenCV-Python tutorials: Changing Colorspaces, Smoothing Images, Canny Edge Detection, Contours. https://docs.opencv.org
-Red Blob Games: Introduction to the A* Algorithm. https://www.redblobgames.com/pathfinding/a-star/introduction.html
-YouTube: add video title, channel, and link
-YouTube: add video title, channel, and link
+YouTube: https://www.youtube.com/watch?v=kS-CGkiPetQ&t=444s
+
