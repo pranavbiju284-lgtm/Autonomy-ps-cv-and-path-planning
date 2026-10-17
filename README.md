@@ -5,6 +5,7 @@ Solutions for the IVDC induction by Pranav Biju.
 This repo covers:
 
 PS 1 – Computer Vision: lane/road isolation on the provided road image (Part B)
+
 PS 2 – Motion Planning: grid-based Dijkstra path planner with visualization (Part B)
 
 Part A research PDFs are in docs/.
@@ -18,7 +19,8 @@ ps2_path_planning/
 docs/                      # Part A PDFs, result screenshots and plots
 requirements.txt
 README.md
-Dependencies
+
+Dependencies:
 Python 3.9 or newer
 opencv-python
 numpy
